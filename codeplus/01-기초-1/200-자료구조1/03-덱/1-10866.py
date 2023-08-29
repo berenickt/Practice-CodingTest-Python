@@ -1,6 +1,7 @@
 # 💡 덱 @https://www.acmicpc.net/problem/10866
 import sys
 from collections import deque
+
 input = sys.stdin.readline
 n = int(input())
 d = deque()
