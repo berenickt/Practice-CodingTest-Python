@@ -13,7 +13,7 @@ for _ in range(n):
     a[u].append(v)
     a[v].append(u)
 
-check = [0]*n  # 0: not visited, 1: visited, 2: cycle
+check = [0] * n  # 0: not visited, 1: visited, 2: cycle
 
 
 def go(x, p):
@@ -43,7 +43,7 @@ def go(x, p):
 go(0, -1)
 
 q = deque()
-dist = [-1]*n
+dist = [-1] * n
 
 for i in range(n):
     if check[i] == 2:
@@ -57,6 +57,6 @@ while q:
     for y in a[x]:
         if dist[y] == -1:
             q.append(y)
-            dist[y] = dist[x]+1
+            dist[y] = dist[x] + 1
 
-print(*dist, sep=' ')
+print(*dist, sep=" ")

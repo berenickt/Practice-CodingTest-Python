@@ -3,9 +3,9 @@ import sys
 from collections import deque
 
 N = int(sys.stdin.readline())
-graph = [[] for i in range(N+1)]
+graph = [[] for i in range(N + 1)]
 
-for _ in range(N-1):
+for _ in range(N - 1):
     a, b = map(int, sys.stdin.readline().split())
     graph[a].append(b)
     graph[b].append(a)
@@ -13,7 +13,7 @@ for _ in range(N-1):
 queue = deque()
 queue.append(1)
 
-ans = [0]*(N+1)
+ans = [0] * (N + 1)
 
 
 def bfs():

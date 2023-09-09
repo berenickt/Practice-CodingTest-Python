@@ -8,8 +8,8 @@ check = [False] * (n)
 
 for _ in range(m):
     u, v = map(int, input().split())
-    a[u-1].append(v-1)
-    a[v-1].append(u-1)
+    a[u - 1].append(v - 1)
+    a[v - 1].append(u - 1)
 
 
 def dfs(x):

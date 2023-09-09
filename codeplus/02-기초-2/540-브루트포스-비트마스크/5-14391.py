@@ -3,12 +3,12 @@ n, m = map(int, input().split())
 a = [list(map(int, list(input()))) for _ in range(n)]
 ans = 0
 
-for s in range(1 << (n*m)):
+for s in range(1 << (n * m)):
     sum = 0
     for i in range(n):
         cur = 0
         for j in range(m):
-            k = i*m+j
+            k = i * m + j
             if (s & (1 << k)) == 0:
                 cur = cur * 10 + a[i][j]
             else:
@@ -18,7 +18,7 @@ for s in range(1 << (n*m)):
     for j in range(m):
         cur = 0
         for i in range(n):
-            k = i*m+j
+            k = i * m + j
             if (s & (1 << k)) != 0:
                 cur = cur * 10 + a[i][j]
             else:

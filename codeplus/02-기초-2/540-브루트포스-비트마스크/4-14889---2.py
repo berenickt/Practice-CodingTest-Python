@@ -8,7 +8,7 @@ for i in range((1 << n)):
     for j in range(n):
         if (i & (1 << j)) > 0:
             cnt += 1
-    if cnt != n//2:
+    if cnt != n // 2:
         continue
     first = []
     second = []
@@ -17,17 +17,17 @@ for i in range((1 << n)):
             first += [j]
         else:
             second += [j]
-    if len(first) != n//2:
+    if len(first) != n // 2:
         continue
     t1 = 0
     t2 = 0
-    for l1 in range(n//2):
-        for l2 in range(n//2):
+    for l1 in range(n // 2):
+        for l2 in range(n // 2):
             if l1 == l2:
                 continue
             t1 += s[first[l1]][first[l2]]
             t2 += s[second[l1]][second[l2]]
-    diff = abs(t1-t2)
+    diff = abs(t1 - t2)
     if ans == -1 or ans > diff:
         ans = diff
 

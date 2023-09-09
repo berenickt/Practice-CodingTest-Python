@@ -4,7 +4,7 @@ from collections import deque
 n = int(input())
 a = [[] for _ in range(n)]
 
-for _ in range(n-1):
+for _ in range(n - 1):
     u, v = map(int, input().split())
     u -= 1
     v -= 1
@@ -12,10 +12,10 @@ for _ in range(n-1):
     a[v].append(u)
 
 order = list(map(int, input().split()))
-order = [x-1 for x in order]
+order = [x - 1 for x in order]
 
-check = [False]*n
-parent = [-1]*n
+check = [False] * n
+parent = [-1] * n
 q = deque()
 
 q.append(0)
@@ -39,11 +39,11 @@ for i in range(n):
             cnt += 1
 
     for j in range(cnt):
-        if m+j >= n or parent[order[m+j]] != x:
+        if m + j >= n or parent[order[m + j]] != x:
             print(0)
             exit()
-        q.append(order[m+j])
-        check[order[m+j]] = True
+        q.append(order[m + j])
+        check[order[m + j]] = True
     m += cnt
 
 print(1)

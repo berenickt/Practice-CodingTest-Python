@@ -4,7 +4,7 @@ from collections import deque
 n = int(input())
 a = [[] for _ in range(n)]
 
-for _ in range(n-1):
+for _ in range(n - 1):
     u, v = map(int, input().split())
     u -= 1
     v -= 1
@@ -12,8 +12,8 @@ for _ in range(n-1):
     a[v].append(u)
 
 b = list(map(int, input().split()))
-b = [x-1 for x in b]
-order = [0]*n
+b = [x - 1 for x in b]
+order = [0] * n
 
 for i in range(n):
     order[b[i]] = i
@@ -23,7 +23,7 @@ for i in range(n):
 
 bfs_order = []
 q = deque()
-check = [False]*n
+check = [False] * n
 q.append(0)
 check[0] = True
 

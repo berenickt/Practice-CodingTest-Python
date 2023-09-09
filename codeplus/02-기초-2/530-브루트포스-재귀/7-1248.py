@@ -21,26 +21,26 @@ def go(index):
         return ok()
     for i in range(-10, 11):
         ans[index] = i
-        if go(index+1):
+        if go(index + 1):
             return True
     return False
 
 
 n = int(input())
 s = input()
-sign = [[0]*n for _ in range(n)]
-ans = [0]*n
+sign = [[0] * n for _ in range(n)]
+ans = [0] * n
 cnt = 0
 
 for i in range(n):
     for j in range(i, n):
-        if s[cnt] == '0':
+        if s[cnt] == "0":
             sign[i][j] = 0
-        elif s[cnt] == '+':
+        elif s[cnt] == "+":
             sign[i][j] = 1
         else:
             sign[i][j] = -1
         cnt += 1
 
 go(0)
-print(' '.join(map(str, ans)))
+print(" ".join(map(str, ans)))

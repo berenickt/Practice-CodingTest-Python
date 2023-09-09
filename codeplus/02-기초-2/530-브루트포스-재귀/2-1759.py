@@ -3,7 +3,7 @@ def check(password):
     ja = 0
     mo = 0
     for x in password:
-        if x in 'aeiou':
+        if x in "aeiou":
             mo += 1
         else:
             ja += 1
@@ -17,8 +17,8 @@ def go(n, alpha, password, i):
         return
     if i == len(alpha):
         return
-    go(n, alpha, password+alpha[i], i+1)
-    go(n, alpha, password, i+1)
+    go(n, alpha, password + alpha[i], i + 1)
+    go(n, alpha, password, i + 1)
 
 
 n, m = map(int, input().split())

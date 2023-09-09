@@ -6,7 +6,7 @@ dy = [1, -1, 0, 0]
 m, n = map(int, input().split())
 a = [list(map(int, input().split())) for _ in range(n)]
 q = deque()
-dist = [[-1]*m for _ in range(n)]
+dist = [[-1] * m for _ in range(n)]
 
 for i in range(n):
     for j in range(m):
@@ -17,7 +17,7 @@ for i in range(n):
 while q:
     x, y = q.popleft()
     for k in range(4):
-        nx, ny = x+dx[k], y+dy[k]
+        nx, ny = x + dx[k], y + dy[k]
         if 0 <= nx < n and 0 <= ny < m:
             if a[nx][ny] == 0 and dist[nx][ny] == -1:
                 q.append((nx, ny))

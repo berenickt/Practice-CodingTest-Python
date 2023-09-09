@@ -6,13 +6,13 @@ class Node:
 
 
 a = dict()
-A = ord('A')
+A = ord("A")
 
 
 def preorder(x):
     if x == -1:
         return
-    print(chr(x+A), end='')
+    print(chr(x + A), end="")
     preorder(a[x].left)
     preorder(a[x].right)
 
@@ -21,7 +21,7 @@ def inorder(x):
     if x == -1:
         return
     inorder(a[x].left)
-    print(chr(x+A), end='')
+    print(chr(x + A), end="")
     inorder(a[x].right)
 
 
@@ -30,19 +30,19 @@ def postorder(x):
         return
     postorder(a[x].left)
     postorder(a[x].right)
-    print(chr(x+A), end='')
+    print(chr(x + A), end="")
 
 
 n = int(input())
 for _ in range(n):
     x, y, z = input().split()
-    x = ord(x)-A
+    x = ord(x) - A
     left = -1
     right = -1
-    if y != '.':
-        left = ord(y)-A
-    if z != '.':
-        right = ord(z)-A
+    if y != ".":
+        left = ord(y) - A
+    if z != ".":
+        right = ord(z) - A
     a[x] = Node(left, right)
 
 preorder(0)

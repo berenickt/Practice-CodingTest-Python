@@ -3,7 +3,7 @@ import sys
 
 n, m = map(int, input().split())
 edges = []
-a = [[False]*n for _ in range(n)]
+a = [[False] * n for _ in range(n)]
 g = [[] for _ in range(n)]
 
 for _ in range(m):

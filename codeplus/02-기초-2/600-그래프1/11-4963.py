@@ -12,7 +12,7 @@ def bfs(x, y, cnt):
     while q:
         x, y = q.popleft()
         for k in range(8):
-            nx, ny = x+dx[k], y+dy[k]
+            nx, ny = x + dx[k], y + dy[k]
             if 0 <= nx < n and 0 <= ny < m:
                 if a[nx][ny] == 1 and group[nx][ny] == 0:
                     q.append((nx, ny))
@@ -24,7 +24,7 @@ while True:
     if n == 0 and m == 0:
         break
     a = [list(map(int, input().split())) for _ in range(n)]
-    group = [[0]*m for _ in range(n)]
+    group = [[0] * m for _ in range(n)]
     cnt = 0
     for i in range(n):
         for j in range(m):

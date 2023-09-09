@@ -6,7 +6,7 @@ def go(s, goal):
         return 1
     now = 0
     for i in range(1, 4):
-        now += go(s+i, goal)
+        now += go(s + i, goal)
     return now
 
 
