@@ -13,7 +13,7 @@ for _ in range(t):
     n = a[0]
     a = a[1:]
     ans = 0
-    for i in range(0, n-1):
-        for j in range(i+1, n):
+    for i in range(0, n - 1):
+        for j in range(i + 1, n):
             ans += gcd(a[i], a[j])
     print(ans)

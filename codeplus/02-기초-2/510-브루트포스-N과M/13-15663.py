@@ -1,10 +1,11 @@
 # 💡 N과 M (9) 📚 https://www.acmicpc.net/problem/15663
 import sys
+
 n, m = map(int, input().split())
-c = [False] * (n+1)
+c = [False] * (n + 1)
 num = list(map(int, input().split()))
 num.sort()
-a = [0]*m
+a = [0] * m
 d = []
 
 
@@ -18,7 +19,7 @@ def go(index, n, m):
             continue
         c[i] = True
         a[index] = i
-        go(index+1, n, m)
+        go(index + 1, n, m)
         c[i] = False
 
 
@@ -26,4 +27,4 @@ go(0, n, m)
 d = list(set(d))
 d.sort()
 for v in d:
-    print(' '.join(map(str, v)))
+    print(" ".join(map(str, v)))

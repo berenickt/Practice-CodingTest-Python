@@ -1,13 +1,13 @@
 # 💡 골드바흐의 추측 📚 https://www.acmicpc.net/problem/6588
 MAX = 1000000
-check = [0]*(MAX+1)
+check = [0] * (MAX + 1)
 check[0] = check[1] = True
 prime = []
 
-for i in range(2, MAX+1):
+for i in range(2, MAX + 1):
     if not check[i]:
         prime.append(i)
-        j = i+i
+        j = i + i
         while j <= MAX:
             check[j] = True
             j += i
@@ -18,6 +18,6 @@ while True:
     if n == 0:
         break
     for p in prime:
-        if check[n-p] == False:
-            print("{0} = {1} + {2}".format(n, p, n-p))
+        if check[n - p] == False:
+            print("{0} = {1} + {2}".format(n, p, n - p))
             break

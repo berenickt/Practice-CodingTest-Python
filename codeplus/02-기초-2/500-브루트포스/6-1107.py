@@ -26,12 +26,12 @@ def possible(c):
     return l
 
 
-ans = abs(n-100)
-for i in range(0, 1000000+1):
+ans = abs(n - 100)
+for i in range(0, 1000000 + 1):
     c = i
     l = possible(c)
     if l > 0:
-        press = abs(c-n)
+        press = abs(c - n)
         if ans > l + press:
             ans = l + press
 

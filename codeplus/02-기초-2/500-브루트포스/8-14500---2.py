@@ -30,7 +30,7 @@ for i in range(n):
             ok = True
             s = a[i][j]
             for dx, dy in block:
-                x, y = i+dx, j+dy
+                x, y = i + dx, j + dy
                 if 0 <= x < n and 0 <= y < m:
                     s += a[x][y]
                 else:

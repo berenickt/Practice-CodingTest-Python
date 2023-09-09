@@ -8,7 +8,7 @@ def gcd(x, y):
 
 n, s = map(int, input().split())
 a = list(map(int, input().split()))
-a = [abs(x-s) for x in a]
+a = [abs(x - s) for x in a]
 ans = a[0]
 
 for i in range(1, n):

@@ -6,9 +6,9 @@ for _ in range(t):
     x -= 1
     y -= 1
     k = x
-    while k < n*m:
+    while k < n * m:
         if k % n == y:
-            print(k+1)
+            print(k + 1)
             break
         k += m
     else:

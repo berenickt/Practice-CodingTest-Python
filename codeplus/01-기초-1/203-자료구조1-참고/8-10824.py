@@ -11,4 +11,4 @@ l1 = int(s1)
 l2 = int(s2)
 
 # 두 정수를 더한 결과를 출력
-print(l1+l2)
+print(l1 + l2)

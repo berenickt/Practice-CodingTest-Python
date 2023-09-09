@@ -2,8 +2,8 @@
 def convert(num, base):
     if num == 0:
         return
-    convert(num//base, base)
-    print(num % base, end=' ')
+    convert(num // base, base)
+    print(num % base, end=" ")
 
 
 a, b = map(int, input().split())

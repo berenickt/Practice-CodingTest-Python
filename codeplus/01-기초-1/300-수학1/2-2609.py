@@ -9,4 +9,4 @@ def gcd(x, y):
 a, b = map(int, input().split())
 g = gcd(a, b)
 print(g)
-print(a*b//g)
+print(a * b // g)

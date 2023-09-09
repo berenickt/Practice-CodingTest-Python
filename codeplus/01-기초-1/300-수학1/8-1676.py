@@ -3,7 +3,7 @@ def calc(n, v):
     ans = 0
     i = v
     while i <= n:
-        ans += n//i
+        ans += n // i
         i *= v
     return ans
 

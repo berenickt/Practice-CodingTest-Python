@@ -2,20 +2,20 @@
 import sys
 
 n, m = map(int, input().split())
-c = [False] * (n+1)
-a = [0]*n
+c = [False] * (n + 1)
+a = [0] * n
 
 
 def go(index, start, n, m):
     if index == m:
         for i in range(m):
-            sys.stdout.write(str(a[i])+' ')
-        sys.stdout.write('\n')
+            sys.stdout.write(str(a[i]) + " ")
+        sys.stdout.write("\n")
         return
-    for i in range(start, n+1):
+    for i in range(start, n + 1):
         c[i] = True
         a[index] = i
-        go(index+1, i, n, m)
+        go(index + 1, i, n, m)
         c[i] = False
 
 
