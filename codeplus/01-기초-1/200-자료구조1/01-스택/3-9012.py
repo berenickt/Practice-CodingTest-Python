@@ -15,6 +15,6 @@ def valid(s):
         return 'NO'
 
 
-t = int(input())   # 테스트 케이스 개수 입력
-for _ in range(t):  # 각 테스트 케이스에 대해 반복
+T = int(input())   # 테스트 케이스 개수 입력
+for _ in range(T):  # 각 테스트 케이스에 대해 반복
     print(valid(input()))  # 결과 출력

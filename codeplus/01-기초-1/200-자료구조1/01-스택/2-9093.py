@@ -17,10 +17,10 @@ import sys
 input = sys.stdin.readline
 
 # 테스트 케이스의 개수를 입력받는다.
-t = int(input())
+T = int(input())
 
 # 각각의 테스트 케이스에 대해 반복
-for _ in range(t):
+for _ in range(T):
     s = input()  # 한 줄을 읽어들여 변수 s에 저장
     stack = []
 
