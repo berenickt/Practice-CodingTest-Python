@@ -1,4 +1,4 @@
-# 💡 단어 뒤집기 @https://www.acmicpc.net/problem/9093
+# 💡 단어 뒤집기 📚 https://www.acmicpc.net/problem/9093
 '''
 입력받은 문자열에서 문자를 하나씩 확인하면서 공백 또는 개행 문자를 만나면 
 그동안 스택에 저장된 문자들을 역순으로 출력하고, 공백 또는 개행 문자를 출력한 뒤 스택을 비웁니다. 
@@ -21,19 +21,19 @@ t = int(input())
 
 # 각각의 테스트 케이스에 대해 반복
 for _ in range(t):
-  s = input() # 한 줄을 읽어들여 변수 s에 저장
-  stack = []
+    s = input()  # 한 줄을 읽어들여 변수 s에 저장
+    stack = []
 
-  # 문자열 s에 대해 한 문자씩 반복
-  for ch in s:
-    # 만약 문자 ch가 공백(' ') 또는 개행 문자('\n')라면,
-    if ch == ' ' or ch == '\n':
-      # stack에 저장된 문자들을 역순으로 이어붙여서 출력하고, 마지막의 개행 문자를 제거 
-      print(''.join(stack[::-1]), end='')
-      stack.clear() # 스택을 비움
+    # 문자열 s에 대해 한 문자씩 반복
+    for ch in s:
+        # 만약 문자 ch가 공백(' ') 또는 개행 문자('\n')라면,
+        if ch == ' ' or ch == '\n':
+            # stack에 저장된 문자들을 역순으로 이어붙여서 출력하고, 마지막의 개행 문자를 제거
+            print(''.join(stack[::-1]), end='')
+            stack.clear()  # 스택을 비움
 
-      # 공백(' ') 또는 개행 문자('\n')를 출력
-      print(ch, end='')
-    else:
-      # 문자 ch가 공백 또는 개행 문자가 아니라면, stack에 문자를 추가
-      stack.append(ch)
+            # 공백(' ') 또는 개행 문자('\n')를 출력
+            print(ch, end='')
+        else:
+            # 문자 ch가 공백 또는 개행 문자가 아니라면, stack에 문자를 추가
+            stack.append(ch)

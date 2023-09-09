@@ -1,4 +1,4 @@
-# 💡 1, 2, 3 더하기 5 @https://www.acmicpc.net/problem/15990
+# 💡 1, 2, 3 더하기 5 📚 https://www.acmicpc.net/problem/15990
 limit = 100000
 d = [[0]*4 for _ in range(limit+1)]
 mod = 1000000009
@@ -22,4 +22,4 @@ for i in range(1, limit+1):
 t = int(input())
 for _ in range(t):
     n = int(input())
-    print(sum(d[n])%mod)
+    print(sum(d[n]) % mod)

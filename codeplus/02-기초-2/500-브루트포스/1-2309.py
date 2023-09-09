@@ -1,4 +1,4 @@
-# 💡 일곱 난쟁이 @https://www.acmicpc.net/problem/2309
+# 💡 일곱 난쟁이 📚 https://www.acmicpc.net/problem/2309
 import sys
 
 n = 9
@@ -7,10 +7,10 @@ a.sort()
 total = sum(a)
 
 for i in range(0, n):
-  for j in range(i+1, n):
-    if total - a[i] - a[j] == 100:
-      for k in range(0, n):
-        if i == k or j == k:
-          continue
-        print(a[k])
-      sys.exit(0)
+    for j in range(i+1, n):
+        if total - a[i] - a[j] == 100:
+            for k in range(0, n):
+                if i == k or j == k:
+                    continue
+                print(a[k])
+            sys.exit(0)
