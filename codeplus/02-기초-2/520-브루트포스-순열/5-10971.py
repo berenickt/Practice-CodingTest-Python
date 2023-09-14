@@ -1,42 +1,68 @@
 # 💡 외판원 순회 2 📚 https://www.acmicpc.net/problem/10971
+# 주어진 배열의 다음 순열을 반환하는 함수
 def next_permutation(a):
+    # 배열의 마지막 요소부터 시작
     i = len(a) - 1
+
+    # 만약 이전 요소가 현재 요소보다 크거나 같다면, 이전 요소를 찾음
     while i > 0 and a[i - 1] >= a[i]:
-        i -= 1
+        i -= 1  # 이전 요소를 찾았다면, 다음 요소를 찾음
+
+    # 만약 이전 요소가 없다면, 다음 순열이 존재하지 않으므로 False를 반환
     if i <= 0:
         return False
-    j = len(a) - 1
-    while a[j] <= a[i - 1]:
-        j -= 1
 
+    # 다음 요소를 찾았다면, 그 다음 요소를 찾음
+    j = len(a) - 1
+
+    # 만약 다음 요소가 이전 요소보다 작거나 같다면, 그 다음 요소를 찾음
+    while a[j] <= a[i - 1]:
+        j -= 1  # 그 다음 요소를 찾았다면, 이전 요소와 그 다음 요소를 교환
+
+    # 이전 요소와 그 다음 요소를 교환
     a[i - 1], a[j] = a[j], a[i - 1]
 
+    # 그 다음 요소부터 마지막 요소까지 역순으로 교환
     j = len(a) - 1
+
+    # i와 j가 교차할 때까지 반복
     while i < j:
-        a[i], a[j] = a[j], a[i]
-        i += 1
-        j -= 1
+        a[i], a[j] = a[j], a[i]  # 두 요소를 교환
+        i += 1  # i를 증가
+        j -= 1  # j를 감소
 
-    return True
+    return True  # 다음 순열이 존재한다면 True를 반환
 
 
+# 사용자로부터 n을 입력받음
 n = int(input())
-w = [list(map(int, input().split())) for _ in range(n)]
-d = list(range(n))
-ans = 2147483647
 
+# 사용자로부터 n개의 행렬을 입력받아 w 리스트에 저장
+w = [list(map(int, input().split())) for _ in range(n)]
+d = list(range(n))  # d 리스트를 초기화
+ans = 2147483647  # 결과값을 초기화
+
+# 다음 순열이 존재할 때까지 반복
 while True:
-    ok = True
-    s = 0
+    ok = True  # 순열이 올바른지 여부를 저장할 변수를 초기화
+    s = 0  # 순열의 합을 저장할 변수를 초기화
+
+    # 각 요소에 대해 이전 요소와의 행렬 값을 확인
     for i in range(0, n - 1):
+        # 만약 행렬 값이 0이라면, 올바른 순열이 아니므로 ok를 False로 설정하고 반복을 종료
         if w[d[i]][d[i + 1]] == 0:
-            ok = False
+            ok = False  # 올바른 순열이 아니므로 ok를 False로 설정
             break
+        # 만약 행렬 값이 0이 아니라면, 순열의 합에 행렬 값을 더함
         else:
+            # 순열의 합에 행렬 값을 더함
             s += w[d[i]][d[i + 1]]
+
+    # 만약 올바른 순열이고 마지막 요소와 첫 번째 요소의 행렬 값이 0이 아니라면,
+    # 순열의 합에 마지막 요소와 첫 번째 요소의 행렬 값을 더합
     if ok and w[d[-1]][d[0]] != 0:
-        s += w[d[-1]][d[0]]
-        ans = min(ans, s)
+        s += w[d[-1]][d[0]]  # 순열의 합에 마지막 요소와 첫 번째 요소의 행렬 값을 더함
+        ans = min(ans, s)  # 결과값과 비교하여 더 작은 값을 결과값으로 저장
     if not next_permutation(d):
         break
 
