@@ -7,7 +7,6 @@ input = sys.stdin.readline  # 입력을 빠르게 받기 위해 sys.stdin.readli
 n = int(input())  # 명령어의 개수 n을 입력받습니다.
 d = deque()  # 덱을 생성
 
-# n번의 반복을 통해 명령어를 처리
 for _ in range(n):
     s = input().split()  # 입력을 공백으로 나누어 명령어와 값(숫자)을 분리
     cmd = s[0]  # 명령어 부분을 추출
