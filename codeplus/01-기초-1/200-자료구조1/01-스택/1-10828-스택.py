@@ -5,7 +5,9 @@
 """
 import sys
 
-input = sys.stdin.readline  # 입력을 빠르게 받기 위해 sys.stdin.readline을 input으로 사용
+# 입력을 빠르게 받기 위해 sys.stdin.readline을 input으로 사용
+input = sys.stdin.readline
+
 n = int(input())  # 정수 n을 입력받습니다. 이것은 명령의 개수를 의미
 stack = []  # 스택을 생성, 스택은 나중에 사용될 리스트
 
