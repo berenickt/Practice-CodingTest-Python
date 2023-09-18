@@ -1,4 +1,4 @@
-# 💡 2×n 타일링 2 📚 https://www.acmicpc.net/problem/9095
+# 💡 1, 2, 3 더하기 📚 https://www.acmicpc.net/problem/9095
 # 각 경우의 수를 저장하기 위한 배열 d를 초기화
 d = [0] * 11
 

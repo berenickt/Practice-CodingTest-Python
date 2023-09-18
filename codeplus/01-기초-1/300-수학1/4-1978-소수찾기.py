@@ -1,4 +1,4 @@
-# 💡 소수 찾기 📚 https://www.acmicpc.net/problem/1934
+# 💡 소수 찾기 📚 https://www.acmicpc.net/problem/1978
 # 주어진 숫자 x가 소수인지 판별하는 함수를 정의
 def is_prime(x):
     # x가 2보다 작으면 소수가 아니므로 False를 반환
