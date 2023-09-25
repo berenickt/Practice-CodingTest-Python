@@ -1,9 +1,19 @@
 # 💡 접미사 배열 📚 https://www.acmicpc.net/problem/11656
 """
 입력된 문자열의 접미사들을 사전순으로 정렬하여 출력하는 코드
+
+이상:미만:간격
+[i:] i이상
 """
-s = input()  # 문자열을 입력받습니다
-n = len(s)  # 입력된 문자열의 길이를 구함
-a = [s[i:] for i in range(n)]  # 접미사들을 저장할 리스트를 생성
-a.sort()  # 접미사들을 사전순으로 정렬
-print("\n".join(a))  # 각 접미사들을 개행 문자로 연결하여 출력
+str = input()  # 문자열을 입력받음
+strLength = len(str)
+
+# 접미사(suffix)들을 저장할 리스트를 생성
+# 0~7(i) 8번 순회, 그 값을 접미사(suffix) 리스트에 저장
+# suffixs: ['baekjoon', 'aekjoon', 'ekjoon', 'kjoon', 'joon', 'oon', 'on', 'n']
+suffixs = [str[i:] for i in range(strLength)]
+
+# 접미사들을 사전순으로 정렬
+suffixs.sort()
+
+print("\n".join(suffixs))  # 각 접미사들을 개행 문자로 연결하여 출력
