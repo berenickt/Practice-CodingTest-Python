@@ -16,15 +16,15 @@ a, b = map(int, input().split())
 # 변환할 정수의 개수 n을 입력받음
 n = int(input())
 
-# 변환 결과를 저장할 변수 ans를 초기화
-ans = 0
+# 변환 결과를 저장할 변수 result를 초기화
+result = 0
 
 # 변환할 정수들을 입력받아 리스트 num에 저장
 num = list(map(int, input().split()))
 
-# 리스트 num의 각 정수를 10진수로 변환하여 ans에 누적
+# 리스트 num의 각 정수를 10진수로 변환하여 result에 누적
 for x in num:
-    ans = ans * a + x
+    result = result * a + x
 
-# ans를 진법 b로 변환하여 출력
-convert(ans, b)
+# result를 진법 b로 변환하여 출력
+convert(result, b)

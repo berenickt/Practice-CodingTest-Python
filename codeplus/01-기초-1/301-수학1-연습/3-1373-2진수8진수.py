@@ -1,30 +1,22 @@
 # 💡 2진수 8진수 📚 https://www.acmicpc.net/problem/1373
-# 문자열 s를 입력받음
-s = input()
+STR = input()
+StrofLen = len(STR)
+result = ""
 
-# 문자열 s의 길이를 n에 저장
-n = len(s)
+# 문자열의 길이에 따라 3으로 나눈 나머지에 따라 처리
 
-# 결과를 저장할 빈 문자열 ans를 초기화
-ans = ""
+if StrofLen % 3 == 1:
+    print(STR[0], end="")  # 첫 번째 문자를 그대로 출력
 
-# 문자열의 길이에 따라 3으로 나눈 나머지에 따라 처리합니다.
-
-# 만약 문자열 길이가 1 또는 4와 같이 3으로 나눈 나머지가 1인 경우,
-# 첫 번째 문자를 그대로 출력합니다.
-if n % 3 == 1:
-    print(s[0], end="")
-
-# 만약 문자열 길이가 2 또는 5와 같이 3으로 나눈 나머지가 2인 경우,
-# 첫 번째 문자와 두 번째 문자를 숫자로 변환하여 계산하여 출력합니다.
-elif n % 3 == 2:
-    print((ord(s[0]) - ord("0")) * 2 + ord(s[1]) - ord("0"), end="")
+elif StrofLen % 3 == 2:
+    # 첫 번째 문자와 두 번째 문자를 숫자로 변환하여 계산하여 출력
+    print((ord(STR[0]) - ord("0")) * 2 + ord(STR[1]) - ord("0"), end="")
 
 # 문자열 길이를 3으로 나눈 나머지부터 시작하여 3자리씩 끊어서 계산
-for i in range(n % 3, n, 3):
+for i in range(StrofLen % 3, StrofLen, 3):
     print(
-        (ord(s[i]) - ord("0")) * 4
-        + (ord(s[i + 1]) - ord("0")) * 2
-        + (ord(s[i + 2]) - ord("0")),
+        (ord(STR[i]) - ord("0")) * 4
+        + (ord(STR[i + 1]) - ord("0")) * 2
+        + (ord(STR[i + 2]) - ord("0")),
         end="",
     )

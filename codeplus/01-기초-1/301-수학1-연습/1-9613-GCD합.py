@@ -19,13 +19,13 @@ for _ in range(TEST_CASE):
     n = a[0]
     a = a[1:]
 
-    # 정답을 저장할 변수 ans를 초기화
-    ans = 0
+    # 정답을 저장할 변수 result를 초기화
+    result = 0
 
-    # 모든 가능한 조합을 반복하여 최대 공약수를 계산하고 ans에 더함
+    # 모든 가능한 조합을 반복하여 최대 공약수를 계산하고 result에 더함
     for i in range(0, n - 1):
         for j in range(i + 1, n):
-            ans += gcd(a[i], a[j])
+            result += gcd(a[i], a[j])
 
     # 테스트 케이스의 정답을 출력
-    print(ans)
+    print(result)

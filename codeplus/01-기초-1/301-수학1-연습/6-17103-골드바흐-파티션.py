@@ -25,19 +25,19 @@ for _ in range(TEST_CASE):
     # 정수 n을 입력받음
     n = int(input())
 
-    # 소수 쌍의 개수를 세기 위한 변수 ans를 초기화
-    ans = 0
+    # 소수 쌍의 개수를 세기 위한 변수 result를 초기화
+    result = 0
 
     # primes 리스트의 소수들을 반복하면서 소수 쌍을 찾습니다
     for p in primes:
         if n - p >= 2 and p <= n - p:
             # n - p가 2 이상이고, p가 n - p보다 작을 경우에만 검사
             if check[n - p] == False:
-                # n - p가 소수인 경우, ans를 증가
-                ans += 1
+                # n - p가 소수인 경우, result를 증가
+                result += 1
         # 조건을 만족하지 않으면 반복을 종료
         else:
             break
 
     # 소수 쌍의 개수를 출력
-    print(ans)
+    print(result)
