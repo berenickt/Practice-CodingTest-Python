@@ -1,5 +1,4 @@
 # 💡 Base Conversion 📚 https://www.acmicpc.net/problem/11576
-# 재귀 함수 convert를 정의
 def convert(num, base):
     # 재귀 종료 조건: num이 0인 경우 함수를 종료
     if num == 0:
@@ -10,13 +9,12 @@ def convert(num, base):
     print(num % base, end=" ")
 
 
-# 정수 a와 b를 입력받음
+# 진법 a와 진법 b를 입력받음
 a, b = map(int, input().split())
 
 # 변환할 정수의 개수 n을 입력받음
 n = int(input())
 
-# 변환 결과를 저장할 변수 result를 초기화
 result = 0
 
 # 변환할 정수들을 입력받아 리스트 num에 저장
