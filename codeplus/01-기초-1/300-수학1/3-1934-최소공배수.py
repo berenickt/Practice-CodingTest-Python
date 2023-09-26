@@ -19,5 +19,5 @@ for _ in range(TEST_CASE):
     # 두 정수 a와 b의 최대공약수(GCD)를 계산
     g = gcd(a, b)
 
-    # a와 b의 최소공배수(LCM)를 계산하고 출력합니다. LCM은 (a * b) / GCD 로 계산
+    # a와 b의 최소공배수(LCM)를 계산하고 출력, LCM은 (a * b) / GCD 로 계산
     print(a * b // g)
