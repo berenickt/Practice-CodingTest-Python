@@ -3,7 +3,7 @@
 eight = ["000", "001", "010", "011", "100", "101", "110", "111"]
 
 # 사용자로부터 문자열을 입력받음
-s = input()
+STR = input()
 
 start = True
 
@@ -11,13 +11,13 @@ start = True
 result = ""
 
 # 입력된 문자열이 "0"인 경우, 결과를 "0"으로 설정
-if s == "0":
+if STR == "0":
     result = "0"
 
 # 입력된 문자열을 순회하면서 처리
-for ch in s:
+for char in STR:
     # 문자를 숫자로 변환
-    n = ord(ch) - ord("0")
+    n = ord(char) - ord("0")
 
     # 시작 플래그인 start가 True이고, n이 4보다 작은 경우 처리
     if start and n < 4:
