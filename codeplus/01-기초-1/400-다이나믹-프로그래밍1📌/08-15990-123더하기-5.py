@@ -36,7 +36,6 @@ for i in range(1, limit + 1):
     d[i][2] %= mod
     d[i][3] %= mod
 
-# 테스트 케이스의 개수를 입력받습니다.
 TEST_CASE = int(input())
 
 # 각 테스트 케이스마다 가능한 경우의 수를 계산하고 출력
