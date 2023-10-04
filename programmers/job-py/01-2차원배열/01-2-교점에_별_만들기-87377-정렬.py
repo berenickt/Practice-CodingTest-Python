@@ -6,7 +6,6 @@
 2. 그 중 정수 교점만 기억하고, 최소/최대 크기를 알아냅니다.
 3. 교점을 모두 표현할 수 있는 최소한의 사각형을 알아냅니다.
 4. 모든 교점을 *로 찍어서 표현합니다.
-5. 배열을 거꾸로 뒤집어 반환
 
 이 방법은 별을 찍을 때 무조건 가장 작은 좌표부터 시작하므로 
 나중에 배열을 뒤집을 필요가 없고, 
@@ -19,19 +18,24 @@
 """
 
 
-def solution(line):
+def solution(numOfLine):
     meet = list()
+
+    # 음의 무한대(-float("inf"))로 초기화, 음의 무한대는 어떤 실수보다도 작은 값으로 간주
     x_max = y_max = -float("inf")
+
+    # 양의 무한대(float("inf"))로 초기화, 양의 무한대는 어떤 실수보다도 큰 값으로 간주
     x_min = y_min = float("inf")
 
     # 📌 (1) 주어진 직선에서 교점을 구합니다.
-    for i in range(len(line)):
-        a, b, e = line[i]
-        for j in range(i + 1, len(line)):
-            c, d, f = line[j]
+    for i in range(len(numOfLine)):
+        a, b, e = numOfLine[i]
+        for j in range(i + 1, len(numOfLine)):
+            c, d, f = numOfLine[j]
             if ((a * d) - (b * c)) == 0:
                 continue
 
+            # 두 직선의 교점이 유일하게 존재할 경우, 그 교점 구하는 공식
             x = ((b * f) - (e * d)) / ((a * d) - (b * c))
             y = ((e * c) - (a * f)) / ((a * d) - (b * c))
 
