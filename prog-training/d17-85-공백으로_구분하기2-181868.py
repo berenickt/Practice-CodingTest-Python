@@ -14,7 +14,7 @@ my_string에 나온 단어를 앞에서부터 순서대로 담은 문자열 배�
 
 
 def solution(my_string):
-    print(my_string.strip())
+    # return my_string.split()
     return my_string.strip().split()
 
 
