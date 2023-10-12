@@ -25,3 +25,14 @@ def solution(arr, idx):
 
 print(solution([0, 0, 0, 1], 1))
 # print(solution([1, 1, 1, 1, 0], 3))
+
+
+#####################################
+def solution2(arr, idx):
+    answer = 0
+    try:
+        answer = arr.index(1, idx)
+    except:
+        answer = -1
+
+    return answer
