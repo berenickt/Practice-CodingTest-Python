@@ -14,8 +14,8 @@ k     : 2
 
 def solution(board, k):
     answer = 0
-    for i, b in enumerate(board):
-        for j in range(len(b)):
+    for i, el in enumerate(board):
+        for j in range(len(el)):
             if i + j <= k:
                 answer += board[i][j]
     return answer

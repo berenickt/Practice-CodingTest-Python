@@ -14,8 +14,8 @@ arr이 다음을 만족하면 1을 아니라면 0을 return
 
 
 def solution(arr):
-    for i, a in enumerate(arr):
-        for j in range(len(a)):
+    for i, el in enumerate(arr):
+        for j in range(len(el)):
             if arr[i][j] != arr[j][i]:
                 return 0
     return 1
