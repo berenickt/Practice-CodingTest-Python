@@ -8,6 +8,11 @@ N : 정점의 수
 M : 간선의 수
 R : 시작정점
 """
+### 성능이 더 빠른 input을 쓰기 위한 3줄
+import sys
+
+sys.setrecursionlimit(10**6)
+input = sys.stdin.readline
 
 
 def dfs(idx):
@@ -20,12 +25,6 @@ def dfs(idx):
         if not visited[i]:
             dfs(i)
 
-
-### 성능이 더 빠른 input을 쓰기 위한 3줄
-import sys
-
-sys.setrecursionlimit(10**6)
-input = sys.stdin.readline
 
 # ✅ 0. 입력 및 초기화
 N, M, R = map(int, input().split())
@@ -41,9 +40,13 @@ for _ in range(M):
     graph[x].append(y)
     graph[y].append(x)
 
-# ✅ 2. dfs(재귀함수) 호출
+# ✅ 2. 오름차순 정렬
+for i in range(1, N + 1):
+    graph[i] = sorted(graph[i])
+
+# ✅ 3. dfs(재귀함수) 호출
 dfs(R)
 
-# ✅ 3. 정답 출력
+# ✅ 4. 정답 출력
 for i in range(1, N + 1):
     print(answer[i])
