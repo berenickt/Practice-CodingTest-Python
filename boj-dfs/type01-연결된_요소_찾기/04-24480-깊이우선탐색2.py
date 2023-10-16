@@ -7,6 +7,8 @@
 N : 정점의 수
 M : 간선의 수
 R : 시작정점
+
+03문제와 다른점은 이번에는 "내림차순"
 """
 ### 성능이 더 빠른 input을 쓰기 위한 3줄
 import sys
@@ -20,6 +22,10 @@ def dfs(idx):
     visited[idx] = True
     answer[idx] = order
     order += 1
+
+    for i in graph[idx]:
+        if not visited[i]:
+            dfs(i)
 
 
 # ✅ 0. 입력 및 초기화
