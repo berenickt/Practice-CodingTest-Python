@@ -5,19 +5,24 @@
 
 의상 종류가 다 같으면 조합할 수 있는 수는 스파이가 가진 의상 수 이다.
 
-1. clothes 에 있는 모든 리스트 중 [1]번 인덱스에 있는 값들을 가져와 새로운 리스트로 만든다. (type_clothes)
+1. clothes 에 있는 모든 리스트 중 [1]번 인덱스에 있는 값들을 가져와 새로운 리스트로 만든다. 
+(type_clothes)
+
 2. type_clothes 를 set (집합 자료형) 을 통해 중복 제거하여 
-   종류의 개수를 변수 (type_num) 에 할당한다.
+종류의 개수를 변수 (type_num) 에 할당한다.
+
 3. 만약, type_num 이 1이라면 len(clothes)을 정답값으로 반환한다.
 4. 만약, type_num 이 1이 아니라면 !
 5. type_clothes 에 의상 종류 값을 새로운 딕셔너리의 key 값으로 만들고, 
-   value는 0으로 설정해 둔다.
+value는 0으로 설정해 둔다.
+
 6. clothes 에 있는 요소들 중 의상의 종류가 dict의 키 값과 같으면 
-   해당 value의 값에 +1 처리해 준다.
+해당 value의 값에 +1 처리해 준다.
+
 7. 마지막으로, type_num 만큼 반복문을 돌리고 조합이 가능한 경우의 수를 구한다.
 e.g.) 얼굴 - 2개, 의상 - 3개 
-      => 한 개씩 착용 = 5, 
-      두 개씩 착용 : 2*3 = 6 ==> 총 11가지의 경우의 수
+    => 한 개씩 착용 = 5, 
+    두 개씩 착용 : 2*3 = 6 ==> 총 11가지의 경우의 수
 적용) 얼굴 -2개, 의상 - 3개 => (2+1)*(3+1)-1 = 11개 (착용하는 경우와 착용하지 않는 경우)
 
 입력 #1
@@ -64,13 +69,3 @@ print(
         ]
     )
 )
-
-
-#### startswith() : 문자열이 특정 문자열로 시작하는지 확인
-def solution2(phoneBook):
-    phoneBook = sorted(phoneBook)
-
-    for p1, p2 in zip(phoneBook, phoneBook[1:]):
-        if p2.startswith(p1):
-            return False
-    return True
