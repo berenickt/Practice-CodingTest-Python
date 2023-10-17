@@ -23,7 +23,7 @@ plays  : [500, 600, 150, 800, 2500]
 
 cf. enumerate : 인덱스와 원소를 동시에 접근
 cf. zip : 두 배열 합치기
-cf. lambda 매개변수 : 표현식
+cf. `lambda 매개변수 : 표현식`
 >>> (lambda x, y: x + y)(10, 20)
 30
 """
