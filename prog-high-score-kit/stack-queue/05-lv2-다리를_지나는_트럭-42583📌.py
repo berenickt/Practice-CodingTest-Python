@@ -26,6 +26,18 @@ queue를 양방향에서 처리해야 하기 때문에 양방형 처리에 유�
 
 cf. 내부적으로 deque은 double-linked list로 구현되어 있음
 그래서 양 끝 요소의 추가/삭제가 O(1)
+
+collections는 유용한 자료구조를 제공하는 python의 표준 라이브러리
+- rotate(1) 을 하면 오른쪽으로 이동
+-- 즉, 제일 뒤에 있던게 제일 앞으로 이동
+- rotate(-1)을 하면 왼쪽으로 이동합니다.
+-- 즉, 제일 앞에 있던데 제일 뒤로 이동
+
+popleft()
+- pop(i) : i번째 인덱스를 삭제하는 연산
+- 보통의 자료구조에서 pop() 연산이라고 하면 제일 끝에 요소가 삭제
+- 이를 반대로 한 것이 바로 popleft()
+- popleft()는 제일 끝 요소가 아니라 제일 앞의 요소가 삭제
 """
 
 
@@ -33,13 +45,14 @@ from collections import deque
 
 
 def solution(bridge_length, weight, truck_weights):
-    bridge = deque(bridge_length * [0])
-    truck_weights = deque(truck_weights)
+    bridge = deque(bridge_length * [0])  # deque([0, 0])
+    truck_weights = deque(truck_weights)  # deque([7, 4, 5, 6])
     time = 0
     curWeight = 0
 
     while len(truck_weights) != 0:
         time += 1
+        # 미리 뺴주어야함 (1초가 지날 때마다 무조건 하나는 빠지므로)
         curWeight -= bridge.popleft()
 
         if curWeight + truck_weights[0] <= weight:
@@ -48,6 +61,7 @@ def solution(bridge_length, weight, truck_weights):
         else:
             bridge.append(0)
 
+    # 방금 마지막 트럭이 들어갔으므로, 브릿지 길이만큼 더해줘야함.
     time += bridge_length
     return time
 
