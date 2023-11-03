@@ -18,11 +18,13 @@
 다음과 같이 코드를 작성하면 
 시간복잡도가 O(X^1/2)인 절반(Half)에 가까운 시간을 줄일 수 있다.
 """
+#### 제곱근 구하기 : math.sqrt 모듈을 써도 되고, n**0.5라고 해도 됨
+# math.sqrt(n) === n**0.5
+import math
 
 
 def is_prime_sqrt(n):
-    # 제곱근 구하기 : math.sqrt 모듈을 써도 됨
-    for i in range(2, int(n**0.5) + 1):
+    for i in range(2, int(math.sqrt(n)) + 1):
         if n % i == 0:
             return "소수 아님"
     return "소수임"

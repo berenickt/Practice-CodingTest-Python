@@ -44,9 +44,11 @@ P[R] - P[L-1]식만 가지고도 문제를 해결 할 수 있다.
 따라서 매 쿼리당 계산 시간은 O(1)이 된다. 
 결과적으로 모두 계산하는 작업은 O(N+M)의 시간복잡도를 가진다.
 """
+# 데이터의 개수 N과 전체 데이터 선언
 n = 5
 data = [10, 20, 30, 40, 50]
 
+# 접두사 합(Prefix Sum) 배열 계산
 value_sum = 0
 prefix_sum = [0]
 
@@ -54,6 +56,7 @@ for i in data:
     value_sum = value_sum + i  # 150
     prefix_sum.append(value_sum)  # [0, 10, 30, 60, 100, 150]
 
+# 구간 합 계산 (세 번째 수부터 네 번째 수까지)
 left = 3
 right = 4
 result = prefix_sum[right] - prefix_sum[left - 1]  # 100 - 30
