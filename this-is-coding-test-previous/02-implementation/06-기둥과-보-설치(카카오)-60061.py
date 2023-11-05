@@ -1,3 +1,4 @@
+# 📚 https://school.programmers.co.kr/learn/courses/30/lessons/60061
 # 현재 설치된 구조물이 '가능한' 구조물인지 확인하는 함수
 def possible(answer):
     for x, y, stuff in answer:

@@ -1,3 +1,4 @@
+# 📚 https://www.acmicpc.net/problem/1439
 data = input()
 count0 = 0  # 전부 0으로 바꾸는 경우
 count1 = 0  # 전부 1로 바꾸는 경우

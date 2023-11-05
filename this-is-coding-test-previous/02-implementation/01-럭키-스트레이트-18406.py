@@ -1,3 +1,4 @@
+# 📚 https://www.acmicpc.net/problem/18406
 n = input()
 length = len(n)  # 점수 값의 총 자릿수
 summary = 0

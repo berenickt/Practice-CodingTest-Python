@@ -1,3 +1,4 @@
+# 📚 https://www.acmicpc.net/problem/15686
 from itertools import combinations
 
 n, m = map(int, input().split())

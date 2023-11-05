@@ -1,3 +1,6 @@
+# 📚 https://school.programmers.co.kr/learn/courses/30/lessons/60057
+
+
 def solution(s):
     answer = len(s)
     # 1개 단위(step)부터 압축 단위를 늘려가며 확인
