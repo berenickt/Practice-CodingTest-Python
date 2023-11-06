@@ -28,13 +28,15 @@ input #1
 """
 import itertools
 
-### 파이썬에서 *는 여러 개의 인수를 받을 때,
-# 키워드 인수를 받을 때 사용하는 표시
+### 파이썬에서 *는 여러 개의 인수를 받을 때, 키워드 인수를 받을 때 사용하는 표시
+### 사용법 : combinations(객체, r) :
+# 반복가능한 객체(리스트,튜플,문자열)안에서 r개를 선택
 while True:
     k, *s = map(int, input().split())
     s.sort()  # testcase #1 s ==> 1 2 3 4 5 6 7
     if k == 0:
         break
-    for result in itertools.combinations(s, 6):
-        print(" ".join(map(str, result)))
+    for rows in itertools.combinations(s, 6):
+        # map(str, rows) ===> rows 안의 각 항목을 문자열로 변환
+        print(" ".join(map(str, rows)))
     print()
