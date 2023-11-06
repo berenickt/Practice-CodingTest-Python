@@ -22,6 +22,8 @@ import itertools
 
 data = [1, 2]
 
+### 사용법 :  permutations(객체, r)
+# 반복가능한 객체(리스트,튜플,문자열)안에서 r개를 선택
 for i in itertools.permutations(data, 2):
     print(list(i), end=" ")
 

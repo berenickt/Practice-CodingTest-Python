@@ -8,6 +8,8 @@ import itertools
 
 data = [1, 2, 3]
 
+### 사용법 : combinations(객체, r) :
+# 반복가능한 객체(리스트,튜플,문자열)안에서 r개를 선택
 for i in itertools.combination(data, 3):
     print(list(i), end=" ")
 

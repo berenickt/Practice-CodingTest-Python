@@ -15,26 +15,31 @@
 C개의 문자들이 모두 주어졌을 때, 
 가능성 있는 암호들을 모두 구하는 프로그램
 
-input #1
 첫째 줄에 두 정수 L, C가 주어진다. (L: 서로 다른 L개 알파벳 소문자, C : 입력받는 개수)
 다음 줄에는 C개의 문자들이 공백으로 구분되어 주어진다
+
+input #1
+4 6
+a t c i s w
 """
 from itertools import combinations
 
-vowels = ("a", "e", "i", "o", "u")  # 5개의 모음 정의
-l, c = map(int, input().split(" "))
 
-# 가능한 암호를 사전식으로 출력해야 하므로 입력 이후에 정렬 수행
+vowels = ("a", "e", "i", "o", "u")  # 5개의 모음 정의
+L_alpabet_cnt, C_input_cnt = map(int, input().split(" "))
+
+### 가능한 암호를 사전식으로 출력해야 하므로 입력 이후에 정렬 수행
 array = input().split(" ")
 array.sort()
+# testcase #1 : array === ['a', 'c', 'i', 's', 't', 'w']
 
-# 길이가 l인 모든 암호 조합을 확인
-for password in combinations(array, l):
-    # 패스워드에 포함된 각 문자를 확인하며 모음의 개수를 세기
-    count = 0
-    for i in password:
-        if i in vowels:
-            count += 1
-    # 최소 1개의 모음과 최소 2개의 자음이 있는 경우 출력
-    if count >= 1 and count <= l - 2:
+### 길이가 L_alpabet_cnt인 모든 암호 조합을 확인
+for password in combinations(array, L_alpabet_cnt):
+    ## 패스워드에 포함된 각 문자를 확인하며 모음의 개수를 세기
+    vowel_cnt = 0
+    for i in password:  # testcase #1 : password ('a', 'c', 'i', 's')
+        if i in vowels:  # testcase #1 : vowel ('a', 'e', 'i', 'o', 'u')
+            vowel_cnt += 1
+    ## 최소 1개의 모음과 최소 2개의 자음이 있는 경우 출력
+    if vowel_cnt >= 1 and vowel_cnt <= L_alpabet_cnt - 2:
         print("".join(password))
