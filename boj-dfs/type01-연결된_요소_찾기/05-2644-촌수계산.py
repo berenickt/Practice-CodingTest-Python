@@ -30,11 +30,36 @@ sys.setrecursionlimit(10**6)
 input = sys.stdin.readline
 
 
+def dfs(idx, count):
+    global visited, graph, end, answer
+    visited[idx] = True
+    if idx == end:
+        answer = count
+        return
+
+    for i in range(1, N + 1):
+        if not visited[i] and graph[idx][i]:
+            dfs(i, count + 1)
+
+
 # ✅ 0. 입력 및 초기화
+N = int(input())
+start, end = map(int, input().split())
+M = int(input())
+MAX = 100 + 10
+graph = [[False] * MAX for _ in range(MAX)]
+visited = [False] * MAX
+answer = -1
 
 # ✅ 1. graph에 연결 정보 채우기
+for _ in range(M):
+    x, y = map(int, input().split())
+    graph[y][x] = True
+    graph[x][y] = True
 
-# ✅ 2. 내림차순 정렬
 
-# ✅ 3. dfs(재귀함수) 호출
-# ✅ 4. 정답 출력
+# ✅ 2. dfs(재귀함수) 호출
+dfs(start, 0)
+
+# ✅ 3. 정답 출력
+print(answer)
