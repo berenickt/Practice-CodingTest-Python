@@ -51,18 +51,19 @@ import sys
 sys.setrecursionlimit(10**6)
 input = sys.stdin.readline
 
+# 상하좌우
 dirY = [-1, 1, 0, 0]
 dirX = [0, 0, -1, 1]
 
 
 def dfs(y, x):
-    global map_
-    map_[y][x] = False
+    global visited, map_
+    visited[y][x] = True
 
     for i in range(4):
         newY = y + dirY[i]
         newX = x + dirX[i]
-        if map_[newY][newX]:
+        if map_[newY][newX] and not visited[newY][newX]:
             dfs(newY, newX)
 
 
@@ -90,5 +91,5 @@ while T > 0:
                 dfs(i, j)
                 answer += 1
 
-# ✅ 3. bfs 호출
-print(answer)
+    # ✅ 3. 정답 출력
+    print(answer)
