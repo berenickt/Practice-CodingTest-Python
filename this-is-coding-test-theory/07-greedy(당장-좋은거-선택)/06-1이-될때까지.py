@@ -13,6 +13,10 @@ input #1
 
 output #1
 2
+
+Tip
+주어진 N에 대하여 최대한 많이 나누기를 수행
+N이 아무리 큰 수여도, K로 계속 나눈다면, 기하급수적으로 빠르게 줄일 수 있음
 """
 # N, K공백을 기준으로 구분하여 입력 받기
 n, k = map(int, input().split())
@@ -20,7 +24,8 @@ n, k = map(int, input().split())
 result = 0
 
 while True:
-    # N이 K로 나누어 떨어지는 수가 될 때까지만 1씩 빼기
+    # #### N이 K로 나누어 떨어지는 수가 될 때까지만 1씩 빼기
+    # (n을 k로 나눈 몫) * k
     target = (n // k) * k
     result += n - target
     n = target
