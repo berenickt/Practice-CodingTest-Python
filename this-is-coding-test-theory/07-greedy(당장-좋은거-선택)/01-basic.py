@@ -27,13 +27,14 @@ N=1,260이라고 하면 500원 2개, 100원 2개, 50원 1개, 10원 1개로
 최소한의 동전으로 거스를 수 있다.
 """
 n = 1260
+# 큰 단위의 화폐부터 차례대로 확인하기
 coin_array = [500, 100, 50, 10]
 count = 0
 
 # count: n을 coin으로 나눈 몫
 # `n`을 `coin`으로 나눈 나머지를 0이될때까지 지속함
 for coin in coin_array:
-    count = count + n // coin
+    count = count + n // coin  # 해당 화폐로 거슬러 줄 수 있는 동전의 개수 세기
     n = n % coin
 
 print(count)  # 👉🏽 6
