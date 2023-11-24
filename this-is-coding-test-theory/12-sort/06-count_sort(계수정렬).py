@@ -24,14 +24,19 @@
 
 때문에, 계수정렬은 공간복잡도는 높지만 조건이 맞으면 빠르게 동작한다는 장점을 갖고 있다.
 """
+# 모든 원소의 값이 0보다 크거나 같다고 가정
 array = [1, 3, 1, 2, 5, 6, 1]
 
+# 모든 범위를 포함하는 리스트 선언(모든 값은 0으로 초기화)
 count = [0] * (len(array) + 1)
 
+# 각 데이터에 해당하는 인덱스의 값 증가
 for i in range(len(array)):
     count[array[i]] = count[array[i]] + 1
 
+# 리스트에 기록된 정렬 정보 확인
 for i in range(len(count)):
+    # 띄어쓰기를 구분으로 등장한 횟수만큰 인덱스 출력
     for j in range(count[i]):
         print(i, end=" ")
 

@@ -32,7 +32,7 @@
 array = [10, 1, 3, 4, 2, 9, 7, 8, 0, 5, 6]
 
 for i in range(len(array)):
-    min_index = i
+    min_index = i  # 가장 작은 원소의 인덱스
     for j in range(i + 1, len(array)):
         if array[min_index] > array[j]:
             min_index = j
