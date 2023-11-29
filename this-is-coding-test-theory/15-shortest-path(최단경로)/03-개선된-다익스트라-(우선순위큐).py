@@ -1,15 +1,3 @@
-"""
-간단한 dijkstra_algorithm은 최단 거리가 가장 짧은 노드를 찾기 위해 
-매번 최단거리 테이블을 선형적으로(모든 원소를 앞에서부터 하나씩) 탐색해야했다.
-선형적으로 탐색한 코드는 다음과 같다.
-"""
-
-for i in range(1, n + 1):
-    if distance[i] < min_value and not visited[i]:
-        min_value = distance[i]
-        index = i
-return index
-
 """📍 heap을 이용한 다익스트라 알고리즘
 개선된 다익스트라 알고리즘에서는 기본적으로 힙(heap)자료구조를 이용한다.
 힙(Heap)자료구조를 이용하게 되면 
@@ -34,26 +22,8 @@ return index
 값에 음수 부호(-)를 붙여서 넣었다가 heapq.heappop 할 때 다시 음수 부호(-)를 붙여 원래의 값으로 돌리면 된다.
 """
 
-
-# desc heap_example
-def heapsort(n):
-    h = []
-    result = []
-
-    for i in n:
-        heapq.heappush(h, -i)
-
-    for i in range(len(h)):
-        result.append(-heapq.heappop(h))
-
-    return result
-
-
 """
-linear_path와의 주요 차이점은 방문처리해주는 함수(get_smallest_node())가 없고,
-대신 우선순위 큐를 이용하는 방식으로 대체할 수 있기 때문에 코드가 간결해진다.
-"""
-"""
+[input #1]
 6 11
 1
 1 2 2
@@ -67,54 +37,65 @@ linear_path와의 주요 차이점은 방문처리해주는 함수(get_smallest_
 4 5 1
 5 3 1
 5 6 2
-"""
 
+[output #1]
+0
+2
+3
+1
+2
+4
+"""
 import heapq
 import sys
 
 input = sys.stdin.readline
-INF = int(1e9)
+INF = int(1e9)  # 무한을 의미하는 값으로 10억을 설정
 
+# 노드의 개수, 간선의 개수를 입력받기
 n, m = map(int, input().split())
+# 시작 노드 번호를 입력받기
 start = int(input())
-graph = [[] for _ in range(n + 1)]
+# 각 노드에 연결되어 있는 노드에 대한 정보를 담는 리스트를 만들기
+graph = [[] for i in range(n + 1)]
+# 최단 거리 테이블을 모두 무한으로 초기화
 distance = [INF] * (n + 1)
 
+# 모든 간선 정보를 입력받기
 for _ in range(m):
     a, b, c = map(int, input().split())
+    # a번 노드에서 b번 노드로 가는 비용이 c라는 의미
     graph[a].append((b, c))
 
 
 def dijkstra(start):
     q = []
+    # 시작 노드로 가기 위한 최단 경로는 0으로 설정하여, 큐에 삽입
     heapq.heappush(q, (0, start))
     distance[start] = 0
-
-    while q:
+    while q:  # 큐가 비어있지 않다면
+        # 가장 최단 거리가 짧은 노드에 대한 정보 꺼내기
         dist, now = heapq.heappop(q)
+        # 현재 노드가 이미 처리된 적이 있는 노드라면 무시
         if distance[now] < dist:
             continue
-
+        # 현재 노드와 연결된 다른 인접한 노드들을 확인
         for i in graph[now]:
             cost = dist + i[1]
+            # 현재 노드를 거쳐서, 다른 노드로 이동하는 거리가 더 짧은 경우
             if cost < distance[i[0]]:
                 distance[i[0]] = cost
                 heapq.heappush(q, (cost, i[0]))
 
 
+# 다익스트라 알고리즘을 수행
 dijkstra(start)
 
+# 모든 노드로 가기 위한 최단 거리를 출력
 for i in range(1, n + 1):
+    # 도달할 수 없는 경우, 무한(INFINITY)이라고 출력
     if distance[i] == INF:
-        print("infinity")
+        print("INFINITY")
+    # 도달할 수 있는 경우 거리를 출력
     else:
-        print(distance[i], end=" ")
-# 👉🏽 0 2 3 1 2 4
-
-"""
-이와 같이 모든 단계를 거친 후 최단 거리 테이블에 남아 있는 0, 2, 3, 1, 2, 4가 각 노드로의 최단 거리이다.
-
-다익스트라 최단 경로 알고리즘은 우선순위 큐를 이용한다는 점에서 
-우선순위 큐를 필요로 하는 다른 문제 유형과도 흡사하다는 특징이 있다. 
-그래서 최단 경로를 찾는 문제를 제외하고도 다른 문제에도 두루 적용되는 소스코드 형태라고 이해할 수 있다.
-"""
+        print(distance[i])
